@@ -1,30 +1,60 @@
 import { graphql } from 'gatsby';
 
-export const DictionarySchema = graphql`
+export interface IContentYaml {
+	datePrefixLabel: string;
+	headerSubtitle: string;
+	headerTitle: string;
+	homepageTitle: string;
+}
+
+export const ContentYamlSchema = graphql`
 	fragment ContentYamlSchema on ContentYaml {
-		homepageTitle
-		headerTitle
-		headerSubtitle
 		datePrefixLabel
+		headerSubtitle
+		headerTitle
+		homepageTitle
 	}
 `;
+
+export interface ISiteSchema {
+	author: string;
+	descriptoin: string;
+	siteUrl: string;
+	title: string;
+}
 
 export const SiteSchema = graphql`
 	fragment SiteSchema on Site {
 		siteMetadata {
-			title
 			author
 			description
 			siteUrl
+			title
 		}
 	}
 `;
 
+export interface ISoapPost {
+	fields: {
+		slug: string;
+	};
+	frontmatter: {
+		date: string;
+		image: {
+			childImageSharp: {
+				fluid: any;
+			};
+		};
+		subtitle: string;
+		title: string;
+	};
+	excerpt: string;
+	html: string;
+	id: string;
+}
+
 export const SoapPostSchema = graphql`
 	fragment SoapPostSchema on MarkdownRemark {
-		id
-		excerpt(pruneLength: 160)
-		html
 		fields {
 			slug
 		}
@@ -40,6 +70,9 @@ export const SoapPostSchema = graphql`
 			subtitle
 			title
 		}
+		excerpt(pruneLength: 160)
+		html
+		id
 	}
 `;
 

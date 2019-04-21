@@ -1,7 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
+import * as React from 'react';
 
 import { Link } from 'gatsby';
+import styled from 'styled-components';
+
+import { ISoapPost } from '../utils/fragments';
 
 //#region Styled components
 
@@ -40,7 +42,13 @@ const LinkStyled = styled(Link)`
 
 //#endregion
 
-export default function SoapNavigation({ previous, next }) {
+export default function SoapNavigation({
+	previous,
+	next
+}: {
+	previous: ISoapPost;
+	next: ISoapPost;
+}) {
 	return (
 		<>
 			<Hr />

@@ -1,4 +1,5 @@
-import React from 'react';
+import * as React from 'react';
+
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 
@@ -45,7 +46,7 @@ const Subtitle = styled.div`
 
 //#endregion
 
-export default function Header({ location }) {
+export default function Header({ location }: { location: Location }) {
 	const { contentYaml } = useStaticQuery(graphql`
 		{
 			contentYaml {
@@ -54,8 +55,7 @@ export default function Header({ location }) {
 		}
 	`);
 
-	const rootPath = `${__PATH_PREFIX__}/`;
-	const isHomepage = location.pathname === rootPath;
+	const isHomepage = location.pathname === '/';
 
 	const link = <HeadingLink to={'/'}>{contentYaml.headerTitle}</HeadingLink>;
 

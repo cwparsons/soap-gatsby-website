@@ -1,12 +1,22 @@
-import React from 'react';
+import * as React from 'react';
+
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import SoapNavigation from '../components/soap-navigation';
 import SoapPost from '../components/soap-post';
+import { ISoapPost } from '../utils/fragments';
 
-export default function SoapTemplate({ data, location, pageContext }) {
+export default function SoapTemplate({
+	data,
+	location,
+	pageContext
+}: {
+	data: any;
+	location: Location;
+	pageContext: { previous: ISoapPost; next: ISoapPost };
+}) {
 	const { previous, next } = pageContext;
 	const node = data.markdownRemark;
 	const siteTitle = data.site.siteMetadata.title;

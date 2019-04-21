@@ -1,7 +1,8 @@
+import * as React from 'react';
+
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { Location } from '@reach/router';
 import Img from 'gatsby-image';
-import React from 'react';
 import styled from 'styled-components';
 
 //#region Styled components

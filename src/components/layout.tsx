@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 
-import Header from './header';
+import Header from '.';
 import GlobalStyle from './global-style';
 import SEO from './seo';
 import theme from '../utils/theme';
@@ -22,7 +22,15 @@ const Wrapper = styled.div`
 
 //#endregion
 
-export default function Layout({ location, title, children }) {
+export default function Layout({
+	children,
+	location,
+	title
+}: {
+	children: React.ReactNode;
+	location: Location;
+	title: string;
+}) {
 	return (
 		<>
 			<GlobalStyle />

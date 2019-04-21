@@ -4,7 +4,8 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.createPages = ({ graphql, actions }) => {
 	const { createPage } = actions;
 
-	const soap = path.resolve(`./src/templates/soap.js`);
+	const soap = path.resolve(`./src/templates/soap.tsx`);
+
 	return graphql(
 		`
 			{
