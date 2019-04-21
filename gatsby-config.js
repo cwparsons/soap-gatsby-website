@@ -1,3 +1,10 @@
+const netlifyCmsPaths = {
+	resolve: `gatsby-plugin-netlify-cms-paths`,
+	options: {
+		cmsConfig: `/static/admin/config.yml`
+	}
+};
+
 module.exports = {
 	siteMetadata: {
 		title: `Soaps by Mami`,
@@ -9,6 +16,7 @@ module.exports = {
 		}
 	},
 	plugins: [
+		netlifyCmsPaths,
 		`gatsby-plugin-netlify-cms`,
 		`gatsby-plugin-react-helmet`,
 		{
@@ -18,7 +26,19 @@ module.exports = {
 				name: `soaps`
 			}
 		},
-		`gatsby-transformer-remark`,
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/static/images`,
+				name: `images`
+			}
+		},
+		{
+			resolve: `gatsby-transformer-remark`,
+			options: {
+				plugins: [netlifyCmsPaths]
+			}
+		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`
 	]

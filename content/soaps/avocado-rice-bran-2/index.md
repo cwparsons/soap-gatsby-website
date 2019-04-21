@@ -1,8 +1,8 @@
 ---
 title: Avocado and Rice Bean
-subtitle: with Cherry Blossom fragrance
+subtitle: With Cherry Blossom fragrance
 date: "2019-04-06"
-image: "corner.jpg"
+image: "/images/avocado-rice-bran-2.jpg"
 ---
 
 ## Ingredients

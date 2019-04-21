@@ -2,19 +2,25 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: static/image
-public_folder: /image
+media_folder: static/images
+public_folder: /images
+
+site_url: https://soap.chrisandmami.com
 
 collections:
   - name: "soaps"
-    label: "Soaps"
+    label: "Soap"
     folder: "content/soaps"
+    extension: md
+    format: frontmatter
     create: true
     slug: "{{slug}}"
     editor:
      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Made Date", name: "date", widget: "datetime" }
+      - { label: "Subtitle", name: "subtitle", widget: "string" }
+      - { label: "Made Date", name: "date", widget: "date" }
       - { label: "Description", name: "description", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
