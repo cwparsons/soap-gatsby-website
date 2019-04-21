@@ -57,7 +57,7 @@ export default function SoapRollup({ index, node, subtitle, title }) {
 						) : null}
 					</Link>
 				</h2>
-				<time>{node.frontmatter.date}</time>
+				<time>Made on {node.frontmatter.date}</time>
 			</div>
 		</div>
 	);

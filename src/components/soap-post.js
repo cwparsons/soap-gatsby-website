@@ -45,7 +45,7 @@ export default function SoapPost({ date, image, post, subtitle, title }) {
 						marginTop: rhythm(0)
 					}}
 				>
-					{date}
+					Made on {date}
 				</time>
 				<div className="soap-post" dangerouslySetInnerHTML={{ __html: post.html }} />
 			</div>
