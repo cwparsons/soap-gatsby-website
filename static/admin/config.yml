@@ -33,6 +33,7 @@ collections:
         label: "Global dictionary"
         name: "content"
         fields:
+          - { label: "Homepage title", name: "homepageTitle", widget: "string" }
           - { label: "Header title", name: "headerTitle", widget: "string" }
           - { label: "Header subtitle", name: "headerSubtitle", widget: "string" }
           - { label: "Date prefix label", name: "datePrefixLabel", widget: "string" }
