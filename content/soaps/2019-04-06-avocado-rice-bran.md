@@ -8,24 +8,26 @@ slug: "2019-04-06-avocado-rice-bran"
 
 ## Ingredients
 
-| Ingredient  | Amount (grams) |
-|:------------|---------------:|
-| Water       |         415.80 |
-| Lye         |         177.65 |
-| Oils        |       1,260.00 |
-| Fragrance   |          39.06 |
+| Ingredient | Percentage | Amount (grams) |
+|:-----------|-----------:|---------------:|
+| Water      |      22.00 |         415.80 |
+| Lye        |       9.24 |         175.94 |
+| Oils       |      66.68 |       1,260.00 |
+| Fragrance  |       2.06 |          39.06 |
+| **Total**  |     100.00 |       1,889.57 |
 
 
 ## Oils
 
-| Oil          | Amount (grams) |
-|:-------------|---------------:|
-| Olive oil    |         441.00 |
-| Coconut oil  |         315.00 |
-| Palm oil     |         315.00 |
-| Shea butter  |          63.00 |
-| Cocoa butter |          63.00 |
-| Castor oil   |          63.00 |
+| Oil                    | Percentage | Amount (grams) |
+|:-----------------------|-----------:|---------------:|
+| Olive oil              |      35.00 |         441.00 |
+| Coconut oil, 75 deg    |      23.00 |         289.80 |
+| Palm oil               |      23.00 |         289.80 |
+| Rice bran oil, refined |      12.00 |         151.20 |
+| Castor oil             |       5.00 |          63.00 |
+| Beeswax                |       2.00 |          25.20 |
+| **Total**              |     100.00 |       1,260.00 |
 
 ## Soap bar quality
 
@@ -33,10 +35,10 @@ Estimated using [_SoapCalc_](http://soapcalc.net).
 
 | Property     |   Normal  |    Recipe   |
 |:------------ |:---------:|:-----------:|
-| Hardness     |  29 - 54  |      44     |
-| Cleansing    |  12 - 22  |      17     |
-| Conditioning |  44 - 69  |      53     |
-| Bubbly       |  14 - 46  |      22     |
-| Creamy       |  16 - 48  |      31     |
-| Iodine       |  41 - 70  |      55     |
-| INS          | 136 - 165 |     156     |
+| Hardness     |  29 - 54  |      40     |
+| Cleansing    |  12 - 22  |      16     |
+| Conditioning |  44 - 69  |      56     |
+| Bubbly       |  14 - 46  |      20     |
+| Creamy       |  16 - 48  |      28     |
+| Iodine       |  41 - 70  |      62     |
+| INS          | 136 - 165 |     146     |

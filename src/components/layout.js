@@ -16,7 +16,9 @@ export default function Layout({ location, title, children }) {
 			}}
 		>
 			<SEO title={title} />
+
 			<Header location={location} />
+
 			<main>{children}</main>
 		</div>
 	);

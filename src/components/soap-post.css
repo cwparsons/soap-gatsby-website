@@ -8,7 +8,7 @@
 
 .soap-post table {
 	border-collapse: collapse;
-	min-width: 18rem;
+	min-width: 20rem;
 }
 
 .soap-post th {
@@ -19,7 +19,17 @@
 
 .soap-post th,
 .soap-post td {
-	padding: 1rem 0;
+	padding: 1rem 0.5rem;
+}
+
+.soap-post th:first-child,
+.soap-post td:first-child {
+	padding-left: 0;
+}
+
+.soap-post th:last-child,
+.soap-post td:last-child {
+	padding-right: 0;
 }
 
 .soap-post td {

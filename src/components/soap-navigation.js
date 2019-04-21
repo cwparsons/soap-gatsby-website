@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Link } from 'gatsby';
 import { textColor } from '../utils/colors';
+import { rhythm } from '../utils/typography';
 
 export default function SoapNavigation({ previous, next }) {
 	const linkStyle = {
@@ -10,7 +11,15 @@ export default function SoapNavigation({ previous, next }) {
 	};
 
 	return (
-		<div>
+		<>
+			<hr
+				style={{
+					borderBottom: '1px solid black',
+					borderTop: 0,
+					marginBottom: rhythm(3),
+					marginTop: rhythm(3)
+				}}
+			/>
 			<ul
 				style={{
 					display: `flex`,
@@ -35,6 +44,6 @@ export default function SoapNavigation({ previous, next }) {
 					)}
 				</li>
 			</ul>
-		</div>
+		</>
 	);
 }

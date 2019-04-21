@@ -46,7 +46,7 @@ export default function SoapRollup({ index, node, subtitle, title }) {
 						fontFamily: headingFontFamily,
 						fontSize: 48,
 						lineHeight: headingLineHeight,
-						marginBottom: rhythm(1),
+						marginBottom: rhythm(2),
 						marginTop: 0
 					}}
 				>

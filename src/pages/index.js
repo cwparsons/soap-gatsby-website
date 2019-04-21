@@ -10,11 +10,6 @@ export default function PageIndex({ location }) {
 			contentYaml {
 				homepageTitle
 			}
-			site {
-				siteMetadata {
-					title
-				}
-			}
 			allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
 				edges {
 					node {
@@ -42,11 +37,14 @@ export default function PageIndex({ location }) {
 
 	return (
 		<Layout location={location} title={data.contentYaml.homepageTitle}>
-			{data.allMarkdownRemark.edges.map(({ node }, index) => {
-				const title = node.frontmatter.title || node.fields.slug;
-
-				return <SoapRollup key={title} index={index} node={node} {...node.frontmatter} />;
-			})}
+			{data.allMarkdownRemark.edges.map(({ node }, index) => (
+				<SoapRollup
+					key={node.frontmatter.title}
+					index={index}
+					node={node}
+					{...node.frontmatter}
+				/>
+			))}
 		</Layout>
 	);
 }
