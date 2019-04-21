@@ -9,6 +9,8 @@ module.exports = {
 		}
 	},
 	plugins: [
+		`gatsby-plugin-netlify-cms`,
+		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -16,7 +18,6 @@ module.exports = {
 				name: `soaps`
 			}
 		},
-		`gatsby-plugin-react-helmet`,
 		`gatsby-transformer-remark`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`

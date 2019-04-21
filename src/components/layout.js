@@ -47,6 +47,8 @@ export default function Layout({ location, title, children }) {
 				) : (
 					<div style={headerStyles}>{link}</div>
 				)}
+
+				<div>Traditionally crafted in small batches</div>
 			</header>
 			<main>{children}</main>
 		</div>
