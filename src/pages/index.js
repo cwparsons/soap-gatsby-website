@@ -6,7 +6,10 @@ import SoapRollup from '../components/soap-rollup';
 
 export default function PageIndex({ location }) {
 	const data = useStaticQuery(graphql`
-		query {
+		{
+			contentYaml {
+				homepageTitle
+			}
 			site {
 				siteMetadata {
 					title
@@ -38,7 +41,7 @@ export default function PageIndex({ location }) {
 	`);
 
 	return (
-		<Layout location={location} title={data.site.siteMetadata.title}>
+		<Layout location={location} title={data.contentYaml.homepageTitle}>
 			{data.allMarkdownRemark.edges.map(({ node }, index) => {
 				const title = node.frontmatter.title || node.fields.slug;
 

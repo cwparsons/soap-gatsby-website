@@ -8,28 +8,30 @@ public_folder: /images
 site_url: https://soap.chrisandmami.com
 
 collections:
-  - name: "soaps"
-    label: "Soap"
-    folder: "content/soaps"
-    extension: md
-    format: frontmatter
+  - name: soaps
     create: true
-    slug: "{{slug}}"
+    extension: md
+    folder: "content/soaps"
+    format: frontmatter
+    identifier_field: slug
+    label_singular: Soap
+    label: Soaps
     editor:
      preview: false
     fields:
+      - { label: "URL slug", name: "slug", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subtitle", name: "subtitle", widget: "string" }
       - { label: "Made Date", name: "date", widget: "date" }
-      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
   - label: "Content"
     name: "content"
     files:
-      - label: "Global dictionary"
+      - file: "content/global.yml"
+        label: "Global dictionary"
         name: "content"
-        file: "content/global.yml"
         fields:
           - { label: "Header title", name: "headerTitle", widget: "string" }
           - { label: "Header subtitle", name: "headerSubtitle", widget: "string" }
