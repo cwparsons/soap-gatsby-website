@@ -34,7 +34,7 @@ slug: "2019-04-04-shea-cocoa"
 Estimated using [_SoapCalc_](http://soapcalc.net).
 
 | Property     |   Normal  |    Recipe   |
-|:------------ |:---------:|:-----------:|
+|:------------ |:---------:|------------:|
 | Hardness     |  29 - 54  |          44 |
 | Cleansing    |  12 - 22  |          17 |
 | Conditioning |  44 - 69  |          53 |
