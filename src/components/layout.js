@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import { rhythm } from '../utils/typography';
+import { rhythm, headingFontFamily, bodyFontFamily } from '../utils/typography';
+import { textColor } from '../utils/colors';
+import SEO from './seo';
 
 export default function Layout({ location, title, children }) {
 	const rootPath = `${__PATH_PREFIX__}/`;
@@ -11,17 +13,19 @@ export default function Layout({ location, title, children }) {
 		header = (
 			<h1
 				style={{
-					marginBottom: rhythm(1.5),
-					marginTop: 0
+					fontFamily: headingFontFamily,
+					fontSize: 72,
+					marginBottom: rhythm(5),
+					marginTop: rhythm(0),
+					textAlign: 'center'
 				}}
 			>
 				<Link
 					style={{
-						boxShadow: `none`,
-						textDecoration: `none`,
-						color: `inherit`
+						color: textColor,
+						textDecoration: 'none'
 					}}
-					to={`/`}
+					to={'/'}
 				>
 					{title}
 				</Link>
@@ -29,19 +33,13 @@ export default function Layout({ location, title, children }) {
 		);
 	} else {
 		header = (
-			<h3
-				style={{
-					fontFamily: `Montserrat, sans-serif`,
-					marginTop: 0
-				}}
-			>
+			<h3>
 				<Link
 					style={{
-						boxShadow: `none`,
-						textDecoration: `none`,
-						color: `inherit`
+						textDecoration: 'none',
+						color: 'inherit'
 					}}
-					to={`/`}
+					to={'/'}
 				>
 					{title}
 				</Link>
@@ -52,19 +50,16 @@ export default function Layout({ location, title, children }) {
 	return (
 		<div
 			style={{
-				marginLeft: `auto`,
-				marginRight: `auto`,
-				maxWidth: rhythm(24),
-				padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`
+				fontFamily: bodyFontFamily,
+				marginLeft: 'auto',
+				marginRight: 'auto',
+				maxWidth: rhythm(40),
+				padding: `${rhythm(5)}px ${rhythm(2)}px`
 			}}
 		>
+			<SEO title={title} />
 			<header>{header}</header>
 			<main>{children}</main>
-			<footer>
-				© {new Date().getFullYear()}, Built with
-				{` `}
-				<a href="https://www.gatsbyjs.org">Gatsby</a>
-			</footer>
 		</div>
 	);
 }
