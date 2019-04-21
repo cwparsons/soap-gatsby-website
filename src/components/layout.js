@@ -7,45 +7,28 @@ import SEO from './seo';
 
 export default function Layout({ location, title, children }) {
 	const rootPath = `${__PATH_PREFIX__}/`;
-	let header;
+	const isHomepage = location.pathname === rootPath;
 
-	if (location.pathname === rootPath) {
-		header = (
-			<h1
-				style={{
-					fontFamily: headingFontFamily,
-					fontSize: 72,
-					marginBottom: rhythm(5),
-					marginTop: rhythm(0),
-					textAlign: 'center'
-				}}
-			>
-				<Link
-					style={{
-						color: textColor,
-						textDecoration: 'none'
-					}}
-					to={'/'}
-				>
-					{title}
-				</Link>
-			</h1>
-		);
-	} else {
-		header = (
-			<h3>
-				<Link
-					style={{
-						textDecoration: 'none',
-						color: 'inherit'
-					}}
-					to={'/'}
-				>
-					{title}
-				</Link>
-			</h3>
-		);
-	}
+	const headerStyles = {
+		fontFamily: headingFontFamily,
+		fontWeight: 800,
+		fontSize: 72,
+		marginBottom: rhythm(5),
+		marginTop: rhythm(0),
+		textAlign: 'center'
+	};
+
+	const link = (
+		<Link
+			style={{
+				color: textColor,
+				textDecoration: 'none'
+			}}
+			to={'/'}
+		>
+			{title}
+		</Link>
+	);
 
 	return (
 		<div
@@ -53,12 +36,18 @@ export default function Layout({ location, title, children }) {
 				fontFamily: bodyFontFamily,
 				marginLeft: 'auto',
 				marginRight: 'auto',
-				maxWidth: rhythm(40),
+				maxWidth: isHomepage ? rhythm(40) : rhythm(64),
 				padding: `${rhythm(5)}px ${rhythm(2)}px`
 			}}
 		>
 			<SEO title={title} />
-			<header>{header}</header>
+			<header>
+				{isHomepage ? (
+					<h1 style={headerStyles}>{link}</h1>
+				) : (
+					<div style={headerStyles}>{link}</div>
+				)}
+			</header>
 			<main>{children}</main>
 		</div>
 	);

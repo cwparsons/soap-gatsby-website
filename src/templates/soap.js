@@ -1,70 +1,40 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { rhythm } from '../utils/typography';
+import { rhythm, headingFontFamily, headingLineHeight } from '../utils/typography';
+import SoapNavigation from '../components/soap-navigation';
+import SoapPost from '../components/soap-post';
 
-export default class SoapTemplate extends React.Component {
-	render() {
-		const post = this.props.data.markdownRemark;
-		const siteTitle = this.props.data.site.siteMetadata.title;
-		const { previous, next } = this.props.pageContext;
+export default function SoapTemplate({ data, location, pageContext }) {
+	const post = data.markdownRemark;
+	const siteTitle = data.site.siteMetadata.title;
+	const { previous, next } = pageContext;
 
-		return (
-			<Layout location={this.props.location} title={siteTitle}>
-				<SEO
-					title={post.frontmatter.title}
-					description={post.frontmatter.description || post.excerpt}
-				/>
-				<h1>{post.frontmatter.title}</h1>
-				<p
-					style={{
-						display: `block`,
-						marginBottom: rhythm(1),
-						marginTop: rhythm(-1)
-					}}
-				>
-					{post.frontmatter.date}
-				</p>
-				<div dangerouslySetInnerHTML={{ __html: post.html }} />
-				<hr
-					style={{
-						marginBottom: rhythm(1)
-					}}
-				/>
+	return (
+		<Layout location={location} title={siteTitle}>
+			<SEO
+				title={post.frontmatter.title}
+				description={post.frontmatter.description || post.excerpt}
+			/>
 
-				<ul
-					style={{
-						display: `flex`,
-						flexWrap: `wrap`,
-						justifyContent: `space-between`,
-						listStyle: `none`,
-						padding: 0
-					}}
-				>
-					<li>
-						{previous && (
-							<Link to={previous.fields.slug} rel="prev">
-								← {previous.frontmatter.title}
-							</Link>
-						)}
-					</li>
-					<li>
-						{next && (
-							<Link to={next.fields.slug} rel="next">
-								{next.frontmatter.title} →
-							</Link>
-						)}
-					</li>
-				</ul>
-			</Layout>
-		);
-	}
+			<SoapPost {...post.frontmatter} post={post} />
+
+			<hr
+				style={{
+					marginBottom: rhythm(1)
+				}}
+			/>
+
+			<SoapNavigation previous={previous} next={next} />
+		</Layout>
+	);
 }
 
 export const pageQuery = graphql`
-	query BlogPostBySlug($slug: String!) {
+	query SoapBySlug($slug: String!) {
 		site {
 			siteMetadata {
 				title
@@ -76,8 +46,16 @@ export const pageQuery = graphql`
 			excerpt(pruneLength: 160)
 			html
 			frontmatter {
+				date(formatString: "MMMM Do, YYYY")
+				image {
+					childImageSharp {
+						fluid(maxWidth: 600) {
+							...GatsbyImageSharpFluid_withWebp
+						}
+					}
+				}
+				subtitle
 				title
-				date(formatString: "MMMM DD, YYYY")
 			}
 		}
 	}

@@ -28,6 +28,7 @@ export default function PageIndex({ location }) {
 									}
 								}
 							}
+							subtitle
 							title
 						}
 					}
@@ -41,7 +42,7 @@ export default function PageIndex({ location }) {
 			{data.allMarkdownRemark.edges.map(({ node }, index) => {
 				const title = node.frontmatter.title || node.fields.slug;
 
-				return <SoapRollup key={title} index={index} node={node} title={title} />;
+				return <SoapRollup key={title} index={index} node={node} {...node.frontmatter} />;
 			})}
 		</Layout>
 	);

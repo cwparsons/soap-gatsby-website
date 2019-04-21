@@ -5,7 +5,7 @@ import { rhythm, headingFontFamily, headingLineHeight } from '../utils/typograph
 import Img from 'gatsby-image';
 import { textColor } from '../utils/colors';
 
-export default function SoapRollup({ index, node, title }) {
+export default function SoapRollup({ index, node, subtitle, title }) {
 	const imageLeft = index % 2 === 0;
 
 	return (
@@ -22,15 +22,14 @@ export default function SoapRollup({ index, node, title }) {
 				style={{
 					marginRight: imageLeft ? rhythm(2) : 0,
 					marginLeft: imageLeft ? 0 : rhythm(2),
-					minWidth: 300,
-					width: 300
+					minWidth: '45%'
 				}}
 			>
 				<Link to={node.fields.slug}>
 					<Img fluid={node.frontmatter.image.childImageSharp.fluid} />
 				</Link>
 			</div>
-			<div>
+			<div style={{ textAlign: imageLeft ? 'left' : 'right' }}>
 				<h2
 					style={{
 						flex: 1,
@@ -46,6 +45,14 @@ export default function SoapRollup({ index, node, title }) {
 						to={node.fields.slug}
 					>
 						{title}
+						{subtitle ? (
+							<>
+								<br />
+								<span style={{ display: 'inline-block', fontSize: 24 }}>
+									{subtitle}
+								</span>
+							</>
+						) : null}
 					</Link>
 				</h2>
 				<time>{node.frontmatter.date}</time>
