@@ -1,6 +1,6 @@
 {
   "name": "soap-gatsby-website",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A website to feature Mami's soaps.",
   "main": "index.js",
   "scripts": {
