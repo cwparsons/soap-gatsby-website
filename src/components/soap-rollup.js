@@ -1,11 +1,19 @@
 import React from 'react';
-
-import { Link } from 'gatsby';
-import { rhythm, headingFontFamily, headingLineHeight } from '../utils/typography';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+
+import { rhythm, headingFontFamily, headingLineHeight } from '../utils/typography';
 import { textColor } from '../utils/colors';
 
 export default function SoapRollup({ index, node, subtitle, title }) {
+	const { contentYaml } = useStaticQuery(graphql`
+		{
+			contentYaml {
+				datePrefixLabel
+			}
+		}
+	`);
+
 	const imageLeft = index % 2 === 0;
 
 	return (
@@ -50,14 +58,22 @@ export default function SoapRollup({ index, node, subtitle, title }) {
 						{subtitle ? (
 							<>
 								<br />
-								<span style={{ display: 'inline-block', fontSize: 24 }}>
+								<span
+									style={{
+										display: 'inline-block',
+										fontSize: 24,
+										fontWeight: 'normal'
+									}}
+								>
 									{subtitle}
 								</span>
 							</>
 						) : null}
 					</Link>
 				</h2>
-				<time>Made on {node.frontmatter.date}</time>
+				<time>
+					{contentYaml.datePrefixLabel} {node.frontmatter.date}
+				</time>
 			</div>
 		</div>
 	);

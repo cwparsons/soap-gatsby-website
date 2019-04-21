@@ -23,7 +23,8 @@ export default function SoapTemplate({ data, location, pageContext }) {
 
 			<hr
 				style={{
-					marginBottom: rhythm(1)
+					marginBottom: rhythm(3),
+					marginTop: rhythm(3)
 				}}
 			/>
 

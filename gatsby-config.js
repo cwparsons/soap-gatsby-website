@@ -19,11 +19,19 @@ module.exports = {
 		netlifyCmsPaths,
 		`gatsby-plugin-netlify-cms`,
 		`gatsby-plugin-react-helmet`,
+		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				path: `${__dirname}/content/soaps`,
 				name: `soaps`
+			}
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/content`,
+				name: `content`
 			}
 		},
 		{
@@ -40,6 +48,6 @@ module.exports = {
 			}
 		},
 		`gatsby-transformer-sharp`,
-		`gatsby-plugin-sharp`
+		`gatsby-transformer-yaml`
 	]
 };

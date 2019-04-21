@@ -1,11 +1,20 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import './soap-post.css';
 
 import { rhythm, headingFontFamily, headingLineHeight } from '../utils/typography';
-import Img from 'gatsby-image';
 
 export default function SoapPost({ date, image, post, subtitle, title }) {
+	const { contentYaml } = useStaticQuery(graphql`
+		{
+			contentYaml {
+				datePrefixLabel
+			}
+		}
+	`);
+
 	return (
 		<div
 			style={{
@@ -34,7 +43,7 @@ export default function SoapPost({ date, image, post, subtitle, title }) {
 					{subtitle ? (
 						<>
 							<br />
-							<span style={{ fontSize: 24 }}>{subtitle}</span>
+							<span style={{ fontSize: 24, fontWeight: 'normal' }}>{subtitle}</span>
 						</>
 					) : null}
 				</h1>
@@ -45,7 +54,7 @@ export default function SoapPost({ date, image, post, subtitle, title }) {
 						marginTop: rhythm(0)
 					}}
 				>
-					Made on {date}
+					{contentYaml.datePrefixLabel} {date}
 				</time>
 				<div className="soap-post" dangerouslySetInnerHTML={{ __html: post.html }} />
 			</div>
