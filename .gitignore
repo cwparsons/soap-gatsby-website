@@ -8,4 +8,4 @@ public
 node_modules
 
 # IDE files
-.vs_code
+.vscode
