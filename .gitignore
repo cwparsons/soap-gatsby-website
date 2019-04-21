@@ -1,0 +1,11 @@
+# Generated files
+.cache
+.DS_Store
+.publish
+public
+
+# Package manager
+node_modules
+
+# IDE files
+.vs_code

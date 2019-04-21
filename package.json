@@ -1,0 +1,30 @@
+{
+  "name": "soap-gatsby-website",
+  "version": "0.1.0",
+  "description": "A website to feature Mami's soaps.",
+  "main": "index.js",
+  "scripts": {
+    "start": "gatsby develop",
+    "test": "gatsby build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwparsons/soap-gatsby-website.git"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "author": "Christopher Parsons",
+  "license": "MIT",
+  "homepage": "https://github.com/cwparsons/soap-gatsby-website#readme",
+  "dependencies": {
+    "gatsby": "^2.3.25",
+    "gatsby-plugin-manifest": "^2.0.29",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-source-filesystem": "^2.0.29",
+    "gatsby-transformer-remark": "^2.3.8",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0"
+  }
+}
