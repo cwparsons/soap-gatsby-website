@@ -34,11 +34,11 @@ slug: "2019-04-06-avocado-rice-bran"
 Estimated using [_SoapCalc_](http://soapcalc.net).
 
 | Property     |   Normal  |    Recipe   |
-|:------------ |:---------:|:-----------:|
-| Hardness     |  29 - 54  |      40     |
-| Cleansing    |  12 - 22  |      16     |
-| Conditioning |  44 - 69  |      56     |
-| Bubbly       |  14 - 46  |      20     |
-| Creamy       |  16 - 48  |      28     |
-| Iodine       |  41 - 70  |      62     |
-| INS          | 136 - 165 |     146     |
+|:------------ |:---------:|------------:|
+| Hardness     |  29 - 54  |          40 |
+| Cleansing    |  12 - 22  |          16 |
+| Conditioning |  44 - 69  |          56 |
+| Bubbly       |  14 - 46  |          20 |
+| Creamy       |  16 - 48  |          28 |
+| Iodine       |  41 - 70  |          62 |
+| INS          | 136 - 165 |         146 |

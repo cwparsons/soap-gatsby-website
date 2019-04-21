@@ -8,42 +8,16 @@ export default function PageIndex({ location }) {
 	const data = useStaticQuery(graphql`
 		{
 			contentYaml {
-				homepageTitle
+				...ContentYamlSchema
 			}
-			allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-				edges {
-					node {
-						excerpt
-						fields {
-							slug
-						}
-						frontmatter {
-							date(formatString: "MMMM Do, YYYY")
-							image {
-								childImageSharp {
-									fluid(maxWidth: 600) {
-										...GatsbyImageSharpFluid_withWebp
-									}
-								}
-							}
-							subtitle
-							title
-						}
-					}
-				}
-			}
+			...SoapPosts
 		}
 	`);
 
 	return (
 		<Layout location={location} title={data.contentYaml.homepageTitle}>
-			{data.allMarkdownRemark.edges.map(({ node }, index) => (
-				<SoapRollup
-					key={node.frontmatter.title}
-					index={index}
-					node={node}
-					{...node.frontmatter}
-				/>
+			{data.allMarkdownRemark.edges.map(({ node }) => (
+				<SoapRollup key={node.fields.slug} node={node} />
 			))}
 		</Layout>
 	);

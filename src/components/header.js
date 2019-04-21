@@ -1,15 +1,55 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 
-import { rhythm, headingFontFamily } from '../utils/typography';
-import { textColor } from '../utils/colors';
+//#region Styled components
+
+const Wrapper = styled.header`
+	margin-bottom: 3rem;
+	text-align: center;
+
+	@media ${props => props.theme.mediaQueries.sm} {
+		margin-bottom: 5rem;
+	}
+`;
+
+const Heading = styled.h1`
+	font-family: ${props => props.theme.fontFamilies.heading};
+	font-size: 4.5rem;
+	margin-bottom: 1rem;
+	margin-top: 0;
+`;
+
+const HeadingDiv = styled.div`
+	font-family: ${props => props.theme.fontFamilies.heading};
+	font-size: 4.5rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+	margin-top: 0;
+`;
+
+const HeadingLink = styled(Link)`
+	color: ${props => props.theme.colors.black};
+	text-decoration: none;
+
+	&:focus,
+	&:hover {
+		color: ${props => props.theme.colors.purple};
+	}
+`;
+
+const Subtitle = styled.div`
+	font-family: ${props => props.theme.fontFamilies.heading};
+	font-size: 1.5rem;
+`;
+
+//#endregion
 
 export default function Header({ location }) {
 	const { contentYaml } = useStaticQuery(graphql`
 		{
 			contentYaml {
-				headerTitle
-				headerSubtitle
+				...ContentYamlSchema
 			}
 		}
 	`);
@@ -17,40 +57,17 @@ export default function Header({ location }) {
 	const rootPath = `${__PATH_PREFIX__}/`;
 	const isHomepage = location.pathname === rootPath;
 
-	const headerStyles = {
-		fontFamily: headingFontFamily,
-		fontWeight: 800,
-		fontSize: 72,
-		marginBottom: rhythm(1),
-		marginTop: 0,
-		textAlign: 'center'
-	};
-
-	const link = (
-		<Link
-			style={{
-				color: textColor,
-				textDecoration: 'none'
-			}}
-			to={'/'}
-		>
-			{contentYaml.headerTitle}
-		</Link>
-	);
+	const link = <HeadingLink to={'/'}>{contentYaml.headerTitle}</HeadingLink>;
 
 	return (
-		<header style={{ marginBottom: rhythm(5) }}>
+		<Wrapper>
 			{isHomepage && contentYaml.headerTitle ? (
-				<h1 style={headerStyles}>{link}</h1>
+				<Heading>{link}</Heading>
 			) : (
-				<div style={headerStyles}>{link}</div>
+				<HeadingDiv>{link}</HeadingDiv>
 			)}
 
-			{contentYaml.headerSubtitle ? (
-				<div style={{ fontFamily: headingFontFamily, fontSize: 24, textAlign: 'center' }}>
-					{contentYaml.headerSubtitle}
-				</div>
-			) : null}
-		</header>
+			{contentYaml.headerSubtitle ? <Subtitle>{contentYaml.headerSubtitle}</Subtitle> : null}
+		</Wrapper>
 	);
 }

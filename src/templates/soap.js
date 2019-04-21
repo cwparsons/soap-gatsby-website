@@ -8,17 +8,17 @@ import SoapPost from '../components/soap-post';
 
 export default function SoapTemplate({ data, location, pageContext }) {
 	const { previous, next } = pageContext;
-	const post = data.markdownRemark;
+	const node = data.markdownRemark;
 	const siteTitle = data.site.siteMetadata.title;
 
 	return (
 		<Layout location={location} title={siteTitle}>
 			<SEO
-				description={post.frontmatter.description || post.excerpt}
-				title={post.frontmatter.title}
+				description={node.frontmatter.description || node.excerpt}
+				title={node.frontmatter.title}
 			/>
 
-			<SoapPost {...post.frontmatter} post={post} />
+			<SoapPost node={node} />
 
 			<SoapNavigation previous={previous} next={next} />
 		</Layout>
@@ -28,27 +28,10 @@ export default function SoapTemplate({ data, location, pageContext }) {
 export const pageQuery = graphql`
 	query SoapBySlug($slug: String!) {
 		site {
-			siteMetadata {
-				title
-				author
-			}
+			...SiteSchema
 		}
 		markdownRemark(fields: { slug: { eq: $slug } }) {
-			id
-			excerpt(pruneLength: 160)
-			html
-			frontmatter {
-				date(formatString: "MMMM Do, YYYY")
-				image {
-					childImageSharp {
-						fluid(maxWidth: 600) {
-							...GatsbyImageSharpFluid_withWebp
-						}
-					}
-				}
-				subtitle
-				title
-			}
+			...SoapPostSchema
 		}
 	}
 `;

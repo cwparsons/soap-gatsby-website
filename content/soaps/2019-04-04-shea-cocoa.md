@@ -35,10 +35,10 @@ Estimated using [_SoapCalc_](http://soapcalc.net).
 
 | Property     |   Normal  |    Recipe   |
 |:------------ |:---------:|:-----------:|
-| Hardness     |  29 - 54  |      44     |
-| Cleansing    |  12 - 22  |      17     |
-| Conditioning |  44 - 69  |      53     |
-| Bubbly       |  14 - 46  |      22     |
-| Creamy       |  16 - 48  |      31     |
-| Iodine       |  41 - 70  |      55     |
-| INS          | 136 - 165 |     156     |
+| Hardness     |  29 - 54  |          44 |
+| Cleansing    |  12 - 22  |          17 |
+| Conditioning |  44 - 69  |          53 |
+| Bubbly       |  14 - 46  |          22 |
+| Creamy       |  16 - 48  |          31 |
+| Iodine       |  41 - 70  |          55 |
+| INS          | 136 - 165 |         156 |

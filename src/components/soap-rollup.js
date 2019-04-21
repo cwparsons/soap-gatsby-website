@@ -1,80 +1,120 @@
-import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Location } from '@reach/router';
 import Img from 'gatsby-image';
+import React from 'react';
+import styled from 'styled-components';
 
-import { rhythm, headingFontFamily, headingLineHeight } from '../utils/typography';
-import { textColor } from '../utils/colors';
+//#region Styled components
 
-export default function SoapRollup({ index, node, subtitle, title }) {
+const Wrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	margin-top: 2rem;
+
+	@media ${props => props.theme.mediaQueries.sm} {
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin-top: 4rem;
+	}
+`;
+
+const ImageContainer = styled.div`
+	flex: 1;
+	width: 100%;
+
+	@media ${props => props.theme.mediaQueries.sm} {
+		margin-right: 2rem;
+		margin-top: 2rem;
+		max-width: 18rem;
+	}
+`;
+
+const TextContainer = styled.div`
+	flex: 1;
+	margin-top: 2rem;
+`;
+
+const Heading = styled.h2`
+	flex: 1;
+	font-family: ${props => props.theme.fontFamilies.heading};
+	font-size: 3rem;
+	line-height: ${props => props.theme.lineHeight.heading};
+	margin-bottom: 2rem;
+	margin-top: 0;
+`;
+
+const LinkStyled = styled(Link)`
+	color: ${props => props.theme.colors.black};
+	text-decoration: none;
+
+	&:focus,
+	&:hover {
+		color: ${props => props.theme.colors.purple};
+	}
+`;
+
+const Subtitle = styled.span`
+	display: block;
+	font-size: 1.5rem;
+	font-weight: normal;
+`;
+
+const Time = styled.time`
+	display: block;
+	margin-bottom: 3rem;
+	margin-top: 0;
+`;
+
+//#endregion
+
+function LinkTest({ children, to }) {
+	return (
+		<Location>
+			{locationProps =>
+				locationProps.location.pathname !== to ? (
+					<LinkStyled to={to}>{children}</LinkStyled>
+				) : (
+					<>{children}</>
+				)
+			}
+		</Location>
+	);
+}
+
+export default function SoapRollup({ children, node }) {
 	const { contentYaml } = useStaticQuery(graphql`
 		{
 			contentYaml {
-				datePrefixLabel
+				...ContentYamlSchema
 			}
 		}
 	`);
 
-	const imageLeft = index % 2 === 0;
-
 	return (
-		<div
-			key={node.fields.slug}
-			style={{
-				display: 'flex',
-				flexDirection: imageLeft ? 'row' : 'row-reverse',
-				flexWrap: 'wrap',
-				marginTop: rhythm(4)
-			}}
-		>
-			<div
-				style={{
-					flex: '1',
-					marginRight: imageLeft ? rhythm(2) : 0,
-					marginLeft: imageLeft ? 0 : rhythm(2),
-					marginTop: rhythm(2),
-					maxWidth: 300
-				}}
-			>
-				<Link to={node.fields.slug}>
+		<Wrapper key={node.fields.slug}>
+			<ImageContainer>
+				<LinkTest to={node.fields.slug}>
 					<Img fluid={node.frontmatter.image.childImageSharp.fluid} />
-				</Link>
-			</div>
-			<div style={{ marginTop: rhythm(2), textAlign: imageLeft ? 'left' : 'right' }}>
-				<h2
-					style={{
-						flex: 1,
-						fontFamily: headingFontFamily,
-						fontSize: 48,
-						lineHeight: headingLineHeight,
-						marginBottom: rhythm(2),
-						marginTop: 0
-					}}
-				>
-					<Link
-						style={{ color: textColor, textDecoration: 'none' }}
-						to={node.fields.slug}
-					>
-						{title}
-						{subtitle ? (
-							<>
-								<br />
-								<span
-									style={{
-										display: 'inline-block',
-										fontSize: 24,
-										fontWeight: 'normal'
-									}}
-								>
-									{subtitle}
-								</span>
-							</>
+				</LinkTest>
+			</ImageContainer>
+
+			<TextContainer>
+				<Heading>
+					<LinkTest to={node.fields.slug}>
+						{node.frontmatter.title}
+
+						{node.frontmatter.subtitle ? (
+							<Subtitle>{node.frontmatter.subtitle}</Subtitle>
 						) : null}
-					</Link>
-				</h2>
-				<time>
+					</LinkTest>
+				</Heading>
+
+				<Time>
 					{contentYaml.datePrefixLabel} {node.frontmatter.date}
-				</time>
-			</div>
-		</div>
+				</Time>
+
+				{children}
+			</TextContainer>
+		</Wrapper>
 	);
 }
