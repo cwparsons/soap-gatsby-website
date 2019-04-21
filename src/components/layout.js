@@ -36,7 +36,7 @@ export default function Layout({ location, title, children }) {
 				fontFamily: bodyFontFamily,
 				marginLeft: 'auto',
 				marginRight: 'auto',
-				maxWidth: isHomepage ? rhythm(40) : rhythm(64),
+				maxWidth: rhythm(64),
 				padding: `${rhythm(5)}px ${rhythm(2)}px`
 			}}
 		>

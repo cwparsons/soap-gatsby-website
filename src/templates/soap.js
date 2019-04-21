@@ -1,10 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { rhythm, headingFontFamily, headingLineHeight } from '../utils/typography';
+import { rhythm } from '../utils/typography';
 import SoapNavigation from '../components/soap-navigation';
 import SoapPost from '../components/soap-post';
 

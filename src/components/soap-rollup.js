@@ -12,24 +12,26 @@ export default function SoapRollup({ index, node, subtitle, title }) {
 		<div
 			key={node.fields.slug}
 			style={{
-				alignItems: 'center',
 				display: 'flex',
 				flexDirection: imageLeft ? 'row' : 'row-reverse',
-				marginTop: rhythm(6)
+				flexWrap: 'wrap',
+				marginTop: rhythm(4)
 			}}
 		>
 			<div
 				style={{
+					flex: '1',
 					marginRight: imageLeft ? rhythm(2) : 0,
 					marginLeft: imageLeft ? 0 : rhythm(2),
-					minWidth: '45%'
+					marginTop: rhythm(2),
+					maxWidth: 300
 				}}
 			>
 				<Link to={node.fields.slug}>
 					<Img fluid={node.frontmatter.image.childImageSharp.fluid} />
 				</Link>
 			</div>
-			<div style={{ textAlign: imageLeft ? 'left' : 'right' }}>
+			<div style={{ marginTop: rhythm(2), textAlign: imageLeft ? 'left' : 'right' }}>
 				<h2
 					style={{
 						flex: 1,

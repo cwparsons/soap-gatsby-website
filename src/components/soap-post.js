@@ -7,7 +7,14 @@ import Img from 'gatsby-image';
 
 export default function SoapPost({ date, image, post, subtitle, title }) {
 	return (
-		<div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+		<div
+			style={{
+				display: 'flex',
+				flexDirection: 'row',
+				flexWrap: 'wrap',
+				marginTop: rhythm(-1)
+			}}
+		>
 			<div style={{ minWidth: 300, marginRight: rhythm(2), marginTop: rhythm(2) }}>
 				<Img fluid={image.childImageSharp.fluid} />
 			</div>
