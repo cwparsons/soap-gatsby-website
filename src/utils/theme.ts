@@ -1,6 +1,6 @@
 import 'typeface-cormorant-garamond';
 
-const theme = {
+export const theme = {
 	colors: {
 		black: '#111111',
 		purpleLight: 'hsl(261, 45%, 98%)',
@@ -19,5 +19,3 @@ const theme = {
 		sm: '(min-width: 30rem)'
 	}
 };
-
-export default theme;

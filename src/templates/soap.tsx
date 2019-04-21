@@ -2,11 +2,11 @@ import * as React from 'react';
 
 import { graphql } from 'gatsby';
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import SoapNavigation from '../components/soap-navigation';
-import SoapPost from '../components/soap-post';
 import { ISoapPost } from '../utils/fragments';
+import { Layout } from '../components/Layout';
+import { SEO } from '../components/Seo';
+import { SoapNavigation } from '../components/SoapNavigation';
+import { SoapPost } from '../components/SoapPost';
 
 export default function SoapTemplate({
 	data,

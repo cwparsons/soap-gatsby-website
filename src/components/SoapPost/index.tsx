@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import styled from 'styled-components';
 
-import SoapRollup from './soap-rollup';
-import { ISoapPost } from '../utils/fragments';
+import { SoapRollup } from '../SoapRollup';
+import { ISoapPost } from '../../utils/fragments';
 
 //#region Styled components
 
@@ -53,7 +53,7 @@ const Markdown = styled.div`
 
 //#endregion
 
-export default function SoapPost({ node }: { node: ISoapPost }) {
+export function SoapPost({ node }: { node: ISoapPost }) {
 	return (
 		<SoapRollup node={node}>
 			<Markdown className="soap-post" dangerouslySetInnerHTML={{ __html: node.html }} />

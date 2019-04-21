@@ -3,19 +3,15 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 
-type MetaProps = JSX.IntrinsicElements['meta'];
-
-export default function SEO({
+export function SEO({
 	description = '',
 	keywords = [],
 	lang = 'en',
-	meta = [],
 	title
 }: {
 	description?: string;
 	keywords?: string[];
 	lang?: string;
-	meta?: MetaProps[];
 	title: string;
 }) {
 	const { site } = useStaticQuery(

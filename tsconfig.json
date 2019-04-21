@@ -2,6 +2,7 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "sourceMap": true,
+    "noEmit": true,
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "esnext",
@@ -9,9 +10,13 @@
     "lib": [
       "dom",
       "esnext"
-    ]
+    ],
+    "rootDir": "src"
   },
   "include": [
     "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
