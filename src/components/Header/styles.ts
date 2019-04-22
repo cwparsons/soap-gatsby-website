@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.header`
 	margin-bottom: 3rem;
-	text-align: center;
 
 	@media ${props => props.theme.mediaQueries.sm} {
 		margin-bottom: 5rem;

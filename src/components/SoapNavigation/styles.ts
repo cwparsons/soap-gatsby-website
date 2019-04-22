@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 export const Hr = styled.hr`
-	border-bottom: 1px solid ${props => props.theme.colors.black};
+	border-bottom: 1px solid ${props => props.theme.colors.dark};
 	border-top: 0;
 	margin-bottom: 3rem;
 	margin-top: 3rem;
@@ -25,7 +25,7 @@ export const List = styled.ul`
 export const LinkStyled = styled(Link)`
 	${props => props.theme.textUnderline}
 
-	color: ${props => props.theme.colors.black};
+	color: ${props => props.theme.colors.dark};
 	display: inline-block;
 	font-family: ${props => props.theme.fontFamilies.heading};
 	font-size: 1.5rem;

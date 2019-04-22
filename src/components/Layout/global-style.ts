@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
 	${styledNormalize}
 
 	body {
-		background-color: ${theme.colors.purpleLight};
+		background-color: ${theme.colors.light};
 		font-size: 16px;
 		margin: 0;
 	}
@@ -20,13 +20,13 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	a {
-		color: ${theme.colors.black};
+		color: ${theme.colors.dark};
 		text-decoration: none;
 		transition: color 100ms ease-in;
 	}
 
 	a:focus,
 	a:hover {
-		color: ${theme.colors.purple};
+		color: ${theme.colors.primary};
 	}
 `;

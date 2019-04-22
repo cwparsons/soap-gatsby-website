@@ -5,10 +5,9 @@ import 'styled-components';
 declare module 'styled-components' {
 	export interface DefaultTheme {
 		colors: {
-			black: string;
-			purpleLight: string;
-			purple: string;
-			purpleDark: string;
+			dark: string;
+			light: string;
+			primary: string;
 		};
 
 		fontFamilies: {

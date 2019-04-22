@@ -2,14 +2,14 @@ import 'typeface-cormorant-garamond';
 
 export const theme = {
 	colors: {
-		black: '#111111',
-		purpleLight: 'hsl(261, 45%, 97%)',
-		purple: 'hsl(261, 45%, 40%)',
-		purpleDark: 'hsl(261, 45%, 20%)'
+		dark: '#111111',
+		light: '#fff',
+		primary: 'hsl(261, 45%, 40%)'
 	},
 	fontFamilies: {
 		heading: 'Cormorant Garamond, serif',
-		body: 'Helvetica Neue, Roboto, Open Sans, Helvetica, Arial, sans-serif'
+		body:
+			'-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif'
 	},
 	lineHeight: {
 		heading: 1,
@@ -22,19 +22,19 @@ export const theme = {
 };
 
 theme.textUnderline = `
-	box-shadow: inset 0 -1px 0 0 ${theme.colors.purpleLight},
-		inset 0 -3px 0 0 ${theme.colors.black};
-	text-shadow: 1px 1px 0 ${theme.colors.purpleLight},
-		-1px 1px 0 ${theme.colors.purpleLight},
-		2px 0 0 ${theme.colors.purpleLight},
-		-2px 0 0 ${theme.colors.purpleLight};
+	box-shadow: inset 0 -1px 0 0 ${theme.colors.light},
+		inset 0 -3px 0 0 ${theme.colors.dark};
+	text-shadow: 1px 1px 0 ${theme.colors.light},
+		-1px 1px 0 ${theme.colors.light},
+		2px 0 0 ${theme.colors.light},
+		-2px 0 0 ${theme.colors.light};
 
 	:hover {
-		box-shadow: inset 0 -1px 0 0 ${theme.colors.purpleLight},
-			inset 0 -3px 0 0 ${theme.colors.purple};
-		text-shadow: 1px 1px 0 ${theme.colors.purpleLight},
-			-1px 1px 0 ${theme.colors.purpleLight},
-			2px 0 0 ${theme.colors.purpleLight},
-			-2px 0 0 ${theme.colors.purpleLight};
+		box-shadow: inset 0 -1px 0 0 ${theme.colors.light},
+			inset 0 -3px 0 0 ${theme.colors.primary};
+		text-shadow: 1px 1px 0 ${theme.colors.light},
+			-1px 1px 0 ${theme.colors.light},
+			2px 0 0 ${theme.colors.light},
+			-2px 0 0 ${theme.colors.light};
 	}
 `;

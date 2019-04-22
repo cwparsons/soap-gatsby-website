@@ -39,7 +39,6 @@ export function SoapRollup({ children, node }: { children?: React.ReactNode; nod
 					</NotCurrentLink>
 				</S.ImageWrapper>
 			</S.ImageColumn>
-
 			<S.TextColumn>
 				<S.Heading>
 					<NotCurrentLink to={node.fields.slug}>

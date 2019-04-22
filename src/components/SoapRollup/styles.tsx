@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 	margin-top: 2rem;
 
 	@media ${props => props.theme.mediaQueries.sm} {
-		flex-direction: row;
+		flex-direction: row-reverse;
 		flex-wrap: wrap;
 		margin-top: 4rem;
 	}
@@ -18,7 +18,7 @@ export const ImageColumn = styled.div`
 	width: 100%;
 
 	@media ${props => props.theme.mediaQueries.sm} {
-		margin-right: 2rem;
+		margin-left: 2rem;
 		max-width: 18rem;
 	}
 
@@ -56,12 +56,12 @@ export const Heading = styled.h2`
 `;
 
 export const LinkStyled = styled(Link)`
-	color: ${props => props.theme.colors.black};
+	color: ${props => props.theme.colors.dark};
 	display: block;
 
 	&:focus,
 	&:hover {
-		color: ${props => props.theme.colors.purple};
+		color: ${props => props.theme.colors.primary};
 	}
 `;
 
