@@ -32,29 +32,35 @@ export function SoapRollup({ children, node }: { children?: React.ReactNode; nod
 
 	return (
 		<S.Wrapper key={node.fields.slug}>
-			<S.ImageContainer>
-				<NotCurrentLink to={node.fields.slug}>
-					<Img fluid={node.frontmatter.image.childImageSharp.fluid} />
-				</NotCurrentLink>
-			</S.ImageContainer>
+			<S.ImageColumn>
+				<S.ImageWrapper>
+					<NotCurrentLink to={node.fields.slug}>
+						<Img fluid={node.frontmatter.image.childImageSharp.fluid} />
+					</NotCurrentLink>
+				</S.ImageWrapper>
+			</S.ImageColumn>
 
-			<S.TextContainer>
+			<S.TextColumn>
 				<S.Heading>
 					<NotCurrentLink to={node.fields.slug}>
-						{node.frontmatter.title}
-
-						{node.frontmatter.subtitle ? (
-							<S.Subtitle>{node.frontmatter.subtitle}</S.Subtitle>
-						) : null}
+						<div>
+							<S.Title>{node.frontmatter.title}</S.Title>
+						</div>
 					</NotCurrentLink>
+
+					{node.frontmatter.subtitle ? (
+						<div>
+							<S.Subtitle>{node.frontmatter.subtitle}</S.Subtitle>
+						</div>
+					) : null}
 				</S.Heading>
 
 				<S.Time>
-					{contentYaml.datePrefixLabel} {node.frontmatter.date}
+					{contentYaml.datePrefixLabel} {node.frontmatter.date}.
 				</S.Time>
 
 				{children}
-			</S.TextContainer>
+			</S.TextColumn>
 		</S.Wrapper>
 	);
 }

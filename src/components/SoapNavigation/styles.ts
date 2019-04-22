@@ -23,15 +23,11 @@ export const List = styled.ul`
 `;
 
 export const LinkStyled = styled(Link)`
+	${props => props.theme.textUnderline}
+
 	color: ${props => props.theme.colors.black};
 	display: inline-block;
 	font-family: ${props => props.theme.fontFamilies.heading};
 	font-size: 1.5rem;
 	margin-top: 1rem;
-	text-decoration: none;
-
-	&:focus,
-	&:hover {
-		color: ${props => props.theme.colors.purple};
-	}
 `;

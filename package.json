@@ -19,7 +19,6 @@
   "license": "MIT",
   "homepage": "https://github.com/cwparsons/soap-gatsby-website#readme",
   "dependencies": {
-    "@types/react-helmet": "^5.0.8",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.3.25",
     "gatsby-image": "^2.0.39",
@@ -39,9 +38,11 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "styled-components": "^4.2.0",
+    "styled-normalize": "^8.0.6",
     "typeface-cormorant-garamond": "0.0.72"
   },
   "devDependencies": {
+    "@types/react-helmet": "^5.0.8",
     "@types/styled-components": "^4.1.14",
     "typescript": "^3.4.4"
   }

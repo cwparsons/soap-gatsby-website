@@ -24,5 +24,7 @@ declare module 'styled-components' {
 		mediaQueries: {
 			sm: string;
 		};
+
+		textUnderline: string;
 	}
 }
