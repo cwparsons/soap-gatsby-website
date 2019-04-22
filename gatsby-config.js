@@ -17,6 +17,18 @@ module.exports = {
 	},
 	plugins: [
 		netlifyCmsPaths,
+		{
+			resolve: `gatsby-plugin-manifest`,
+			options: {
+				icon: 'static/images/icon.png',
+				name: `Soaps by Mami.`,
+				short_name: `Soaps by Mami.`,
+				start_url: `/`,
+				background_color: `#ffffff`,
+				theme_color: `#583894`,
+				display: `standalone`
+			}
+		},
 		`gatsby-plugin-netlify-cms`,
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-sharp`,
