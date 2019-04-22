@@ -29,11 +29,11 @@ slug: "2019-04-04-shea-cocoa"
 | **Total**    |     100.00 |       1,260.00 |
 
 
-## Soap bar quality
+## Soap bar qualities
 
 Estimated using [_SoapCalc_](http://soapcalc.net).
 
-| Property     |   Normal  |    Recipe   |
+| Quality      |   Normal  |    Recipe   |
 |:------------ |:---------:|------------:|
 | Hardness     |  29 - 54  |          44 |
 | Cleansing    |  12 - 22  |          17 |

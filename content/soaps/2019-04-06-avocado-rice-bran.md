@@ -10,11 +10,11 @@ slug: "2019-04-06-avocado-rice-bran"
 
 | Ingredient | Percentage | Amount (grams) |
 |:-----------|-----------:|---------------:|
-| Water      |      22.00 |         415.80 |
-| Lye        |       9.24 |         175.94 |
-| Oils       |      66.68 |       1,260.00 |
-| Fragrance  |       2.06 |          39.06 |
-| **Total**  |     100.00 |       1,889.57 |
+| Water      |      21.99 |         415.80 |
+| Lye        |       9.31 |         175.94 |
+| Oils       |      66.64 |       1,260.00 |
+| Fragrance  |       2.07 |          39.06 |
+| **Total**  |     100.00 |       1,890.80 |
 
 
 ## Oils
@@ -29,11 +29,12 @@ slug: "2019-04-06-avocado-rice-bran"
 | Beeswax                |       2.00 |          25.20 |
 | **Total**              |     100.00 |       1,260.00 |
 
-## Soap bar quality
+
+## Soap bar qualities
 
 Estimated using [_SoapCalc_](http://soapcalc.net).
 
-| Property     |   Normal  |    Recipe   |
+| Quality      |   Normal  |    Recipe   |
 |:------------ |:---------:|------------:|
 | Hardness     |  29 - 54  |          40 |
 | Cleansing    |  12 - 22  |          16 |
