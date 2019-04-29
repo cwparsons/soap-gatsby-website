@@ -14,7 +14,7 @@ export function SoapGallery() {
 					node {
 						childImageSharp {
 							fluid {
-								...GatsbyImageSharpFluid
+								...GatsbyImageSharpFluid_withWebp
 							}
 						}
 					}
