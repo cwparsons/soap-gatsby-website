@@ -2,11 +2,11 @@ import * as React from 'react';
 
 import { graphql } from 'gatsby';
 
-import { ISoapPost } from '../utils/fragments';
+import { ISoapRecipe } from '../utils/fragments';
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/Seo';
 import { SoapNavigation } from '../components/SoapNavigation';
-import { SoapPost } from '../components/SoapPost';
+import { SoapRecipe } from '../components/SoapRecipe';
 
 export default function SoapTemplate({
 	data,
@@ -15,7 +15,7 @@ export default function SoapTemplate({
 }: {
 	data: any;
 	location: Location;
-	pageContext: { previous: ISoapPost; next: ISoapPost };
+	pageContext: { previous: ISoapRecipe; next: ISoapRecipe };
 }) {
 	const { previous, next } = pageContext;
 	const node = data.markdownRemark;
@@ -28,7 +28,7 @@ export default function SoapTemplate({
 				title={node.frontmatter.title}
 			/>
 
-			<SoapPost node={node} />
+			<SoapRecipe node={node} />
 
 			<SoapNavigation previous={previous} next={next} />
 		</Layout>
@@ -41,7 +41,7 @@ export const pageQuery = graphql`
 			...SiteSchema
 		}
 		markdownRemark(fields: { slug: { eq: $slug } }) {
-			...SoapPostSchema
+			...SoapRecipeSchema
 		}
 	}
 `;

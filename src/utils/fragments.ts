@@ -34,7 +34,7 @@ export const SiteSchema = graphql`
 	}
 `;
 
-export interface ISoapPost {
+export interface ISoapRecipe {
 	fields: {
 		slug: string;
 	};
@@ -53,8 +53,8 @@ export interface ISoapPost {
 	id: string;
 }
 
-export const SoapPostSchema = graphql`
-	fragment SoapPostSchema on MarkdownRemark {
+export const SoapRecipeSchema = graphql`
+	fragment SoapRecipeSchema on MarkdownRemark {
 		fields {
 			slug
 		}
@@ -76,12 +76,12 @@ export const SoapPostSchema = graphql`
 	}
 `;
 
-export const SoapPosts = graphql`
-	fragment SoapPosts on Query {
+export const SoapRecipes = graphql`
+	fragment SoapRecipes on Query {
 		allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
 			edges {
 				node {
-					...SoapPostSchema
+					...SoapRecipeSchema
 				}
 			}
 		}

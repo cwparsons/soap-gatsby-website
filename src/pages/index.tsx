@@ -2,9 +2,10 @@ import * as React from 'react';
 
 import { graphql, useStaticQuery } from 'gatsby';
 
-import { ISoapPost } from '../utils/fragments';
+import { ISoapRecipe } from '../utils/fragments';
 import { Layout } from '../components/Layout';
 import { SoapRollup } from '../components/SoapRollup';
+import { SoapGallery } from '../components/SoapGallery';
 
 export default function PageIndex({ location }: { location: Location }) {
 	const data = useStaticQuery(graphql`
@@ -12,15 +13,17 @@ export default function PageIndex({ location }: { location: Location }) {
 			contentYaml {
 				...ContentYamlSchema
 			}
-			...SoapPosts
+			...SoapRecipes
 		}
 	`);
 
 	return (
 		<Layout location={location} title={data.contentYaml.homepageTitle}>
-			{data.allMarkdownRemark.edges.map(({ node }: { node: ISoapPost }) => (
+			{data.allMarkdownRemark.edges.map(({ node }: { node: ISoapRecipe }) => (
 				<SoapRollup key={node.fields.slug} node={node} />
 			))}
+
+			<SoapGallery />
 		</Layout>
 	);
 }

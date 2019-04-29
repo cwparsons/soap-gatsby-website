@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { ISoapPost } from '../../utils/fragments';
+import { ISoapRecipe } from '../../utils/fragments';
 import * as S from './styles';
 
-export function SoapNavigation({ previous, next }: { previous: ISoapPost; next: ISoapPost }) {
+export function SoapNavigation({ previous, next }: { previous: ISoapRecipe; next: ISoapRecipe }) {
 	return (
 		<>
 			<S.Hr />

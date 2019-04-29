@@ -2,7 +2,7 @@
 title: Avocado and Rice Bran
 subtitle: With Cherry Blossom fragrance
 date: "2019-04-05"
-image: "/images/avocado-rice-bran.jpg"
+image: "/images/recipes/avocado-rice-bran.jpg"
 slug: "2019-04-05-avocado-rice-bran"
 ---
 

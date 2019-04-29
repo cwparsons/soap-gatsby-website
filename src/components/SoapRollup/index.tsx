@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Location } from '@reach/router';
 import Img from 'gatsby-image';
 
-import { ISoapPost } from '../../utils/fragments';
+import { ISoapRecipe } from '../../utils/fragments';
 import * as S from './styles';
 
 function NotCurrentLink({ children, to }: { children: React.ReactNode; to: string }) {
@@ -21,7 +21,7 @@ function NotCurrentLink({ children, to }: { children: React.ReactNode; to: strin
 	);
 }
 
-export function SoapRollup({ children, node }: { children?: React.ReactNode; node: ISoapPost }) {
+export function SoapRollup({ children, node }: { children?: React.ReactNode; node: ISoapRecipe }) {
 	const { contentYaml } = useStaticQuery(graphql`
 		{
 			contentYaml {
