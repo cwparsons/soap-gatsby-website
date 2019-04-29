@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 48rem;
-	padding: 3rem 1rem;
+	padding: 1rem;
 
 	@media ${props => props.theme.mediaQueries.sm} {
 		padding: 5rem 2rem;

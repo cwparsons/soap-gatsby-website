@@ -21,6 +21,7 @@ export const Markdown = styled.div`
 	th,
 	td {
 		padding: 1rem 0.5rem;
+		width: calc(1 / 3 * 100%);
 	}
 
 	th:first-child,

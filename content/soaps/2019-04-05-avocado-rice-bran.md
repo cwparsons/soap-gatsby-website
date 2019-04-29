@@ -35,7 +35,7 @@ slug: "2019-04-05-avocado-rice-bran"
 Estimated using [_SoapCalc_](http://soapcalc.net).
 
 | Quality      |   Normal  |    Recipe   |
-|:------------ |:---------:|------------:|
+|:------------ |----------:|------------:|
 | Hardness     |  29 - 54  |          40 |
 | Cleansing    |  12 - 22  |          16 |
 | Conditioning |  44 - 69  |          56 |

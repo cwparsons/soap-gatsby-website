@@ -15,7 +15,7 @@ export const Heading = styled.h2`
 	font-size: 3rem;
 	line-height: 3rem;
 	margin-bottom: 2rem;
-	margin-top: 0;
+	margin-top: 4rem;
 `;
 
 export const Grid = styled.div`

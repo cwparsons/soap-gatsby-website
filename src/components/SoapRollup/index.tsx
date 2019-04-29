@@ -7,12 +7,18 @@ import Img from 'gatsby-image';
 import { ISoapRecipe } from '../../utils/fragments';
 import * as S from './styles';
 
-function NotCurrentLink({ children, to }: { children: React.ReactNode; to: string }) {
+function NotCurrentLink({
+	children,
+	props
+}: {
+	children: React.ReactNode;
+	props: GatsbyLinkProps;
+}) {
 	return (
 		<Location>
 			{locationProps =>
-				locationProps.location.pathname !== to ? (
-					<S.LinkStyled to={to}>{children}</S.LinkStyled>
+				props.to && locationProps.location.pathname !== props.to ? (
+					<S.LinkStyled {...props}>{children}</S.LinkStyled>
 				) : (
 					<>{children}</>
 				)
@@ -34,23 +40,19 @@ export function SoapRollup({ children, node }: { children?: React.ReactNode; nod
 		<S.Wrapper key={node.fields.slug}>
 			<S.ImageColumn>
 				<S.ImageWrapper>
-					<NotCurrentLink to={node.fields.slug}>
+					<NotCurrentLink props={{ to: node.fields.slug }}>
 						<Img fluid={node.frontmatter.image.childImageSharp.fluid} />
 					</NotCurrentLink>
 				</S.ImageWrapper>
 			</S.ImageColumn>
 			<S.TextColumn>
 				<S.Heading>
-					<NotCurrentLink to={node.fields.slug}>
-						<div>
-							<S.Title>{node.frontmatter.title}</S.Title>
-						</div>
+					<NotCurrentLink props={{ to: node.fields.slug }}>
+						<S.Title>{node.frontmatter.title}</S.Title>
 					</NotCurrentLink>
 
 					{node.frontmatter.subtitle ? (
-						<div>
-							<S.Subtitle>{node.frontmatter.subtitle}</S.Subtitle>
-						</div>
+						<S.Subtitle>{node.frontmatter.subtitle}</S.Subtitle>
 					) : null}
 				</S.Heading>
 

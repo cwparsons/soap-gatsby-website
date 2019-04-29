@@ -4,22 +4,20 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin-top: 2rem;
+	margin-top: 4rem;
 
 	@media ${props => props.theme.mediaQueries.sm} {
 		flex-direction: row-reverse;
 		flex-wrap: wrap;
-		margin-top: 4rem;
 	}
 `;
 
 export const ImageColumn = styled.div`
-	flex: 1;
 	width: 100%;
 
 	@media ${props => props.theme.mediaQueries.sm} {
-		margin-left: 2rem;
-		max-width: 18rem;
+		margin-left: 1rem;
+		width: calc(33% - 0.5rem);
 	}
 
 	a {
@@ -51,8 +49,12 @@ export const Heading = styled.h2`
 	flex: 1;
 	font-size: 3rem;
 	line-height: 3rem;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 	margin-top: 0;
+
+	@media ${props => props.theme.mediaQueries.sm} {
+		margin-bottom: 2rem;
+	}
 `;
 
 export const LinkStyled = styled(Link)`
@@ -72,6 +74,7 @@ export const Title = styled.span`
 `;
 
 export const Subtitle = styled.span`
+	display: block;
 	font-size: 1.5rem;
 	font-weight: normal;
 

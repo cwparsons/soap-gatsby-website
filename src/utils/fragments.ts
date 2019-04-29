@@ -1,4 +1,21 @@
 import { graphql } from 'gatsby';
+import { FluidObject, FixedObject } from 'gatsby-image';
+
+export interface GatsbyImageSharp {
+	base64: string;
+	height: number;
+	src: string;
+	srcSet: string;
+	width: number;
+}
+
+export interface GatsbyImageSharpFluid extends GatsbyImageSharp {
+	fluid: FluidObject;
+}
+
+export interface GatsbyImageSharpFixed extends GatsbyImageSharp {
+	fixed: FixedObject;
+}
 
 export interface IContentYaml {
 	datePrefixLabel: string;
