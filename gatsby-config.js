@@ -18,6 +18,13 @@ module.exports = {
 	plugins: [
 		netlifyCmsPaths,
 		{
+			resolve: `gatsby-plugin-google-tagmanager`,
+			options: {
+				id: 'GTM-PFPS5CL',
+				includeInDevelopment: true
+			},
+		},
+		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				icon: 'static/images/icon.png',
