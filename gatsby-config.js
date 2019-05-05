@@ -38,6 +38,12 @@ module.exports = {
 		},
 		`gatsby-plugin-netlify`,
 		`gatsby-plugin-netlify-cms`,
+		{
+			resolve: `gatsby-plugin-nprogress`,
+			options: {
+				color: `#583894`
+			}
+		},
 		`gatsby-plugin-offline`,
 		`gatsby-plugin-react-helmet`,
 		{

@@ -4,7 +4,7 @@ export const theme = {
 	colors: {
 		dark: '#111111',
 		light: '#fff',
-		primary: 'hsl(261, 45%, 40%)'
+		primary: '#583894'
 	},
 	fontFamilies: {
 		heading: 'Cormorant Garamond, serif',
