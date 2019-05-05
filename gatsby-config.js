@@ -10,7 +10,7 @@ module.exports = {
 		title: `Soaps by Mami`,
 		author: `Christopher Parsons`,
 		description: `A sample of Mami's soaps.`,
-		siteUrl: `https://chrisandmami.com/`,
+		siteUrl: `https://soap.chrisandmami.com/`,
 		social: {
 			twitter: `cwlparsons`
 		}
@@ -39,6 +39,7 @@ module.exports = {
 		`gatsby-plugin-netlify-cms`,
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-sharp`,
+		`gatsby-plugin-sitemap`,
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-typescript`,
 		{
