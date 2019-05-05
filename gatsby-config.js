@@ -20,14 +20,14 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-google-tagmanager`,
 			options: {
-				id: 'GTM-PFPS5CL',
+				id: `GTM-PFPS5CL`,
 				includeInDevelopment: true
 			},
 		},
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				icon: 'static/images/icon.png',
+				icon: `static/images/icon.png`,
 				name: `Soaps by Mami.`,
 				short_name: `Soaps by Mami.`,
 				start_url: `/`,
@@ -40,6 +40,19 @@ module.exports = {
 		`gatsby-plugin-netlify-cms`,
 		`gatsby-plugin-offline`,
 		`gatsby-plugin-react-helmet`,
+		{
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        env: {
+          development: {
+            policy: [{ userAgent: `*`, disallow: [`/`] }]
+          },
+          production: {
+            policy: [{ userAgent: `*`, allow: `/`, disallow: [`/admin`] }]
+          }
+        }
+      }
+    },
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-sitemap`,
 		`gatsby-plugin-styled-components`,
