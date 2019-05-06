@@ -10,7 +10,7 @@ module.exports = {
 		title: `Soaps by Mami`,
 		author: `Christopher Parsons`,
 		description: `A sample of Mami's soaps.`,
-		siteUrl: `https://soap.chrisandmami.com/`,
+		siteUrl: `https://soap.chrisandmami.com`,
 		social: {
 			twitter: `cwlparsons`
 		}
@@ -18,11 +18,17 @@ module.exports = {
 	plugins: [
 		netlifyCmsPaths,
 		{
+			resolve: `gatsby-plugin-canonical-urls`,
+			options: {
+				siteUrl: `https://soap.chrisandmami.com`
+			}
+		},
+		{
 			resolve: `gatsby-plugin-google-tagmanager`,
 			options: {
 				id: `GTM-PFPS5CL`,
 				includeInDevelopment: true
-			},
+			}
 		},
 		{
 			resolve: `gatsby-plugin-manifest`,
@@ -47,18 +53,18 @@ module.exports = {
 		`gatsby-plugin-offline`,
 		`gatsby-plugin-react-helmet`,
 		{
-      resolve: `gatsby-plugin-robots-txt`,
-      options: {
-        env: {
-          development: {
-            policy: [{ userAgent: `*`, disallow: [`/`] }]
-          },
-          production: {
-            policy: [{ userAgent: `*`, allow: `/`, disallow: [`/admin`] }]
-          }
-        }
-      }
-    },
+			resolve: `gatsby-plugin-robots-txt`,
+			options: {
+				env: {
+					development: {
+						policy: [{ userAgent: `*`, disallow: [`/`] }]
+					},
+					production: {
+						policy: [{ userAgent: `*`, allow: `/`, disallow: [`/admin`] }]
+					}
+				}
+			}
+		},
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-sitemap`,
 		`gatsby-plugin-styled-components`,
