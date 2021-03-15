@@ -1,15 +1,16 @@
 import * as React from 'react';
 
 import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import * as S from './styles';
-import { GatsbyImageSharpFluid } from '../../utils/fragments';
 
 interface IGalleryImages {
 	edges: {
 		node: {
-			childImageSharp: GatsbyImageSharpFluid;
+			childImageSharp: {
+				gatsbyImageData: IGatsbyImageData;
+			};
 		};
 	}[];
 }
@@ -21,9 +22,7 @@ export function SoapGallery() {
 				edges {
 					node {
 						childImageSharp {
-							fluid {
-								...GatsbyImageSharpFluid_withWebp
-							}
+							gatsbyImageData(layout: FULL_WIDTH)
 						}
 					}
 				}
@@ -36,9 +35,9 @@ export function SoapGallery() {
 			<S.Heading>Gallery</S.Heading>
 			<S.Grid>
 				{allFile.edges && allFile.edges.length
-					? allFile.edges.map(image => (
-							<S.ImageWrapper key={image.node.childImageSharp.fluid.src}>
-								<Img fluid={image.node.childImageSharp.fluid} />
+					? allFile.edges.map((image, index) => (
+							<S.ImageWrapper key={`gallery-index-${index}-key`}>
+								<GatsbyImage alt="" image={image.node.childImageSharp.gatsbyImageData} />
 							</S.ImageWrapper>
 					  ))
 					: null}

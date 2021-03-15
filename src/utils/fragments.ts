@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import { FluidObject, FixedObject } from 'gatsby-image';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 export interface GatsbyImageSharp {
 	base64: string;
@@ -7,14 +7,6 @@ export interface GatsbyImageSharp {
 	src: string;
 	srcSet: string;
 	width: number;
-}
-
-export interface GatsbyImageSharpFluid extends GatsbyImageSharp {
-	fluid: FluidObject;
-}
-
-export interface GatsbyImageSharpFixed extends GatsbyImageSharp {
-	fixed: FixedObject;
 }
 
 export interface IContentYaml {
@@ -59,7 +51,7 @@ export interface ISoapRecipe {
 		date: string;
 		image: {
 			childImageSharp: {
-				fluid: any;
+				gatsbyImageData: IGatsbyImageData;
 			};
 		};
 		subtitle: string;
@@ -79,9 +71,7 @@ export const SoapRecipeSchema = graphql`
 			date(formatString: "MMMM Do, YYYY")
 			image {
 				childImageSharp {
-					fluid(maxWidth: 600) {
-						...GatsbyImageSharpFluid_withWebp
-					}
+					gatsbyImageData(width: 600, layout: CONSTRAINED)
 				}
 			}
 			subtitle

@@ -30,6 +30,7 @@ module.exports = {
 				includeInDevelopment: true
 			}
 		},
+		`gatsby-plugin-image`,
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
