@@ -2,7 +2,7 @@
 slug: 2020-06-27-italian-pink-grapefruit
 title: Italian Pink Grapefruit
 date: "2020-06-27"
-image: /images/italian-pink-grapefruit-june-27-2020.jpg
+image: /images/2020-06-27-italian-pink-grapefruit.jpg
 ---
 ## Ingredients
 
@@ -30,7 +30,7 @@ image: /images/italian-pink-grapefruit-june-27-2020.jpg
 
 - 6.7 tsp of sodium lactate
 - 100g of pink grapefruit essential oil
-- 3 tsp of Pink Peral mica
+- 3 tsp of Pink Pearl mica
 
 ## Soap bar qualities
 
