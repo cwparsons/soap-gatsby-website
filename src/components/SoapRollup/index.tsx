@@ -40,14 +40,14 @@ export function SoapRollup({ children, node }: { children?: React.ReactNode; nod
 	return (
 		<S.Wrapper key={node.fields.slug}>
 			<S.ImageColumn>
-				<S.ImageWrapper>
-					<NotCurrentLink props={{ to: node.fields.slug }}>
+				<NotCurrentLink props={{ to: node.fields.slug }}>
+					<S.ImageWrapper>
 						<GatsbyImage
 							alt=""
 							image={node.frontmatter.image.childImageSharp.gatsbyImageData}
 						/>
-					</NotCurrentLink>
-				</S.ImageWrapper>
+					</S.ImageWrapper>
+				</NotCurrentLink>
 			</S.ImageColumn>
 			<S.TextColumn>
 				<S.Heading>
