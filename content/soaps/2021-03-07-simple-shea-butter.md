@@ -1,7 +1,8 @@
 ---
-slug: 2021-03-07-simple-shea-butter
+slug: 2021-03-07-simple-shea-butter-with-rose-garden
 title: Simple Shea Butter
-date: "2021-03-07"
+subtitle: With Rose Garden fragrance
+date: 2021-03-07
 image: /images/2021-03-07-simple-shea-butter.jpg
 ---
 ## Ingredients
