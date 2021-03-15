@@ -7,7 +7,7 @@ image: /images/italian-pink-grapefruit-june-27-2020.jpg
 ## Ingredients
 
 | Ingredient | Percentage | Amount (grams) |
-| ---------- | ---------- | -------------- |
+|:---------- | ----------:| --------------:|
 | Water      | 22%        | 1,009.80       |
 | Lye        | 9.5%       | 431.33         |
 | Oils       | 66.5%      | 3,060.00       |
@@ -17,7 +17,7 @@ image: /images/italian-pink-grapefruit-june-27-2020.jpg
 ## Oils
 
 | Oil          | Percentage | Amount (grams) |
-| ------------ | ---------- | -------------- |
+|:------------ | ----------:| --------------:|
 | Olive oil    | 35%        | 1,055.70       |
 | Coconut oil  | 25%        | 765.00         |
 | Palm oil     | 25%        | 765.00         |
@@ -37,11 +37,11 @@ image: /images/italian-pink-grapefruit-june-27-2020.jpg
 Estimated using *[SoapCalc](http://soapcalc.net)*.
 
 | Quality      | Normal    | Recipe |
-| ------------ | --------- | ------ |
-| Hardness     | 29 - 54   | 44     |
-| Cleansing    | 12 - 22   | 17     |
-| Conditioning | 44 - 69   | 53     |
-| Bubbly       | 14 - 46   | 22     |
-| Creamy       | 16 - 48   | 31     |
-| Iodine       | 41 - 70   | 55     |
-| INS          | 136 - 165 | 156    |
+|:------------ | ---------:| ------:|
+| Hardness     | 29 - 54   |     44 |
+| Cleansing    | 12 - 22   |     17 |
+| Conditioning | 44 - 69   |     53 |
+| Bubbly       | 14 - 46   |     22 |
+| Creamy       | 16 - 48   |     31 |
+| Iodine       | 41 - 70   |     55 |
+| INS          | 136 - 165 |    156 |
