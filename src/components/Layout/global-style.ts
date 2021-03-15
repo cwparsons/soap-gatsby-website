@@ -6,6 +6,10 @@ import { theme } from '../../utils/theme';
 export const GlobalStyle = createGlobalStyle`
 	${styledNormalize}
 
+	html {
+		line-height: 1.5;
+	}
+
 	body {
 		background-color: ${theme.colors.light};
 		font-size: 16px;
@@ -15,8 +19,11 @@ export const GlobalStyle = createGlobalStyle`
 	h1,
 	h2,
 	h3,
-	h4 {
+	h4,
+	h5,
+	h6 {
 		font-family: ${theme.fontFamilies.heading};
+		line-height: 1.2;
 	}
 
 	a {
@@ -28,5 +35,9 @@ export const GlobalStyle = createGlobalStyle`
 	a:focus,
 	a:hover {
 		color: ${theme.colors.primary};
+	}
+
+	table {
+		line-height: 1.2;
 	}
 `;
