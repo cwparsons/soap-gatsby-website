@@ -1,7 +1,8 @@
 ---
-slug: 2021-02-28-shea-butter
+slug: 2021-02-28-shea-butter-wth-eucalyptus-tea-tree
 title: Shea Butter
-date: "2021-02-28"
+subtitle: With eucalyptus and tea tree essential oils
+date: 2021-02-28
 image: /images/2021-02-28-shea-butter.jpg
 ---
 ## Ingredients
